@@ -1,75 +1,130 @@
-  <style>
-  .search-menu {
-  display: flex;
-  justify-content: space-between;
-  padding: 1em 2em;
+<style>
+
+
+/*basic styles*/
+html, body {
+	margin: 0;
+}
+html {
+	background: #88686A;
+}
+body {
+	font: 100% Lato, Helvetica, sans-serif;
+	background: white;
+	width: 80%;
+	margin: 0 auto;
+	padding: 2%;
+	line-height: 1.6;
+}
+article, aside, section, nav, figure, header, footer {
+	display: block;
+}
+h1, h2, h3, h4 {
+	font-weight: normal;
+	font-family: Lato, Helvetica, sans-serif;
+  font-weight: 300;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.75);
+	color: #575451;
+	margin: .5em 0;
+	line-height: 1.2;
+}
+h1 {
+	font-size: 2.6em;
+}
+h2 {
+	font-size: 2em;
+}
+h3 {
+	font-size: 1.8em;
+	text-transform: uppercase;
+}
+h4 {
+	font: 1.2em Lato, Helvetica, sans-serif;
+	color: black;
+}
+p
+ {
+	margin: 0 0 1em;
+}
+a {
+	color: #77A0B8;
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
+code {
+	color: red;
 }
 
-.npm-logo {
-  width: 10%;
-}
 
-.npm-logo > img {
-  max-width: 100%;
-}
 
-.search-bar {
-  display: flex;
-  width: 70%;
-}
 
-.search-bar > label {
-  background-color: rgba(0, 0, 0, 0.05);
-  width: 5%;
-}
 
-.magnifying-glass {
-  padding: 0.5em;
-}
+/***************************/
 
-.search-bar > input[type="text"] {
-  margin: 0;
-  flex: 1;
-  padding: 5px 10px 5px 40px;
-  color: rgba(0, 0, 0, 0.05);
-  background-color: rgba(0, 0, 0, 0.05);
-  border: 0px;
-  padding: 0.2em;
+.search-form {
+	width: 80%;
+	margin: 0 auto;
 }
-
-.search-bar > button {
-  border: none;
-  background-color: #fb3e44;
-  color: white;
-  padding: 0.5em 2em;
+input[type="search"] {
+	box-sizing: border-box;
+	background: #E9E9E9;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	padding: 0.35em 0.75em;
+	border: none;
+	font-size: 1.1em;
+	text-decoration: none;
+	line-height: normal;
+	max-height: 3em;
 }
-
-.join,
-.log-in {
-  display: inline-block;
-  text-decoration: none;
-  color: black;
-  padding: 0.5em 1em;
-  border: 1px solid black;
+button[type="submit"] {
+	box-sizing: border-box;
+	border-radius: 0px 2px 2px 0px;
+	background: #8B798C;
+	font-weight: 300;
+	text-transform: uppercase;
+	color: white;
+	padding: 0.35em 0.75em;
+	border: none;
+	font-size: 1.1em;
+	text-decoration: none;
+	cursor: pointer;	
 }
+button[type="submit"]:hover {
+	background: #C17CCF;
+}
+/*flex it*/
+.search-form {
+	display: flex;
+	flex-wrap: wrap;
+}
+input[type="search"] {
+	flex: 2 0 250px;
+}
+button[type="submit"] {
+	flex: 1 0 90px;
+}
+@media (max-width: 450px) {
+body {
+	width: 100%;
+	margin: 0;
+	padding: 1em 0 2em;
+}
+header {
+	padding: 2% 5%;
+}
+}    
+  
 </style>
   
   
-  <div class="search-menu">
-    <div class="npm-logo">
-      <img src="https://i.imgur.com/BH7CCkO.png" alt="npmlogo" />
-    </div>
-
-    <div class="search-bar">
-      <label id="search-label" for="search">
-        <i class="fa fa-search magnifying-glass"></i>
-      </label>
-      <input id="search" type="text" placeholder="Search Packages">
-      <button>
-        Search
-      </button>
-    </div>
-
-    <a class="join" href="#">Join</a>
-    <a class="log-in" href="#">Log In</a>
-  </div>
+</header>
+<article class="example">
+<form class="search-form">
+  <input type="search" name="search" placeholder="Search this site" class="search-input">
+  <button type="submit" class="search-btn">Search</button>
+</form>
+</article>
