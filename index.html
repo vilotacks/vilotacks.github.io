@@ -12,18 +12,78 @@
   <p> You can use any of these sounds for anything, these files are hosted on freesound.org but are made by me. </p>
 </div>
 
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+#myInput {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 12px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#myUL {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#myUL li a {
+  border: 1px solid #ddd;
+  margin-top: -1px; /* Prevent double borders */
+  background-color: #f6f6f6;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  color: black;
+  display: block
+}
+
+#myUL li a:hover:not(.header) {
+  background-color: #eee;
+}
+</style>
+</head>
+<body>
+
+<h2>My Phonebook</h2>
+
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for categories" title="">
+
+<ul id="myUL">
+  <li><a href="vilotacks.github.io/cat/drilling.html">Drilling</a></li>
+  <li><a href="vilotacks.github.io/cat/velcro.html">Velcro</a></li>
+</ul>
+
+<script>
+function myFunction() {
+    var input, filter, ul, li, a, i, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("myUL");
+    li = ul.getElementsByTagName("li");
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+}
+</script>
+
+</body>
 
 
-<div style="  
-  background-color: white;
-  width: 500px;
-  border: 3px solid green;
-  padding: 10px;
-  margin: 10px;">
-  <h2> Short Drilling Sound </h2>
-  <img src="vilotacks.github.io/images/wave1">
-  <br />
-  <a href="https://freesound.org/people/tackbackward/sounds/541403/download/541403__tackbackward__short-drilling-sound.wav">download</a>
-</div>
 
 
